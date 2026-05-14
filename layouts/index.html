@@ -1,0 +1,25 @@
+{{ define "main" }}
+    {{ partial "hero.html" (dict "title" "Hola, soy Desarrollador" "subtitle" "Construyo soluciones digitales elegantes y eficientes." "cta" (dict "url" "/projects" "text" "Ver Proyectos")) }}
+
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Proyectos Destacados</h2>
+            <div class="grid">
+                {{ range (where .Site.RegularPages "Section" "projects") | first 3 }}
+                    {{ partial "card.html" . }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="text-center">Últimas entradas</h2>
+            <div class="grid">
+                {{ range (where .Site.RegularPages "Section" "blog") | first 3 }}
+                    {{ partial "card.html" . }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+{{ end }}

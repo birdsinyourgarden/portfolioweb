@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="section">
+    <div class="container-narrow">
+        <header style="margin-bottom: var(--space-8);">
+            <h1>{{ .Title }}</h1>
+            <div class="text-muted">
+                {{ if .Date }}<time>{{ .Date.Format "02 Jan, 2006" }}</time>{{ end }}
+                {{ with .Params.categories }} • {{ range . }}{{ . }}{{ end }}{{ end }}
+            </div>
+        </header>
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </div>
+</article>
+{{ end }}

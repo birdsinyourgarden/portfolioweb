@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="section">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        <div class="grid">
+            {{ range .Paginator.Pages }}
+                {{ partial "card.html" . }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

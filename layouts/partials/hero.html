@@ -1,0 +1,11 @@
+<section class="section">
+    <div class="container">
+        <h1 class="hero-title">{{ .title }}</h1>
+        <p class="hero-subtitle">{{ .subtitle }}</p>
+        {{ with .cta }}
+        <a href="{{ .url }}" class="btn">
+            {{ .text }}
+        </a>
+        {{ end }}
+    </div>
+</section>
